@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Lamiaart",
-    siteUrl:"lamiaart.gatsbyjs.io"
+    siteUrl:"https://lamiaart.gatsbyjs.io/"
   },
   plugins: [
     "gatsby-plugin-sass",
