@@ -9,7 +9,7 @@ export default function IndexPage(){
     <div className="index">
     <p>Unfold My Story</p>
     <StaticImage src="../images/ladyLongHair.jpg" alt="long hair Lady" placeholder="blurred" className="lady"></StaticImage>
-    <StaticImage src="../images/Circle_-_black_simple.svg" alt="lamiaarti" placeholder="blurred" className="logo"></StaticImage>
+    <StaticImage src="../images/Circle_-_black_simple.svg" alt="lamiaarti" placeholder="blurred" className="logo" style={{position:"absolute"}}></StaticImage>
    </div>
   )
 }
