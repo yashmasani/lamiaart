@@ -10,33 +10,46 @@
   }
 }
 
+@media only screen and (max-width:500px){
+  div > .logo{
+    right: 30%; 
+  }
+}
+
+
 .logo{
   height: 200px;
   width: 200px;
   position: absolute;
-  right: 40%;
+  right: 45%;
   top: 40%;
   animation-name: heart;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  background-color: white ;
+  border-radius: 50%; ;
 }
 
 .logo:hover{
   animation-play-state: paused;;
+  border: solid 2px black;
+  cursor:pointer;
 }
 
 
 .lady{
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 }
 .index{
   text-align:center;;
 }
-p{
-  font-family: "Alegreya Sans";
-  font-size: 5rem;
+.font-index{
+  font-family: "italianno",Arial, Helvetica, sans-serif;
+  font-size: 7rem;
   font-style: italic;
+  font-display: fallback;
+  margin: 10px; 
 }
 
