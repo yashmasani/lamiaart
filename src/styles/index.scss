@@ -10,11 +10,6 @@
   }
 }
 
-@media only screen and (max-width:500px){
-  div > .logo{
-    right: 30%; 
-  }
-}
 
 
 .logo{
@@ -36,20 +31,29 @@
   border: solid 2px black;
   cursor:pointer;
 }
-
-
+  
 .lady{
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+  padding: 0;
+  margin:0; 
 }
 .index{
   text-align:center;;
 }
 .font-index{
-  font-family: "italianno",Arial, Helvetica, sans-serif;
-  font-size: 7rem;
+  font-family:'Playfair Display SC';
+  font-size: 5rem;
   font-style: italic;
-  font-display: fallback;
-  margin: 10px; 
+  margin:0;
+  padding:0;
 }
 
+@media only screen and (max-width:500px){
+  .logo{
+    right:0;
+    left: 100px; 
+  }
+  .font-index{
+    font-size: 4.4rem;
+  }
+    
+}
