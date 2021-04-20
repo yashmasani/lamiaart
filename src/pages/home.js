@@ -11,14 +11,16 @@ export default function home(){
 
 const NavBar = props => {
 
-  
-  if(window.innerWidth > 500){
+
+
+
+  if(window && window.innerWidth > 500){
 
    return (
       <nav>
         <Link to="/Articles">Articles</Link>
         <Link to="/About">About</Link>
-        <StaticImage src="../images/smallerLogo.png" alt="Logo"></StaticImage>
+        <StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed"></StaticImage>
         <Link to="/Pages">Pages</Link>
         <Link to="/Poetry">Poetry</Link>
       </nav>
