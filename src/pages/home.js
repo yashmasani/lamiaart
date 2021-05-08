@@ -4,6 +4,7 @@ import "../styles/nav.scss"
 import {StaticImage} from "gatsby-plugin-image"
 import "@fontsource/fira-mono"
 import "@fontsource/laila"
+import {useState} from "react"
 
 export default function home(){
   return (
@@ -13,13 +14,13 @@ export default function home(){
 
 const NavBar = props => {
 
+  const [menuBar,setMenuBar] = useState(false)
 
 
-
-  if(typeof window!="undefined" && window.innerWidth > 500){
+  if(typeof window!="undefined" && window.innerWidth > 800){
 
    return (
-      <div className="nav-body">
+      <div style={{textAlign:"center"}}>
         <nav>
          <Link to="/Articles" className="nav-link">Articles</Link>
          <Link to="/About" className="nav-link">About</Link>
@@ -29,6 +30,30 @@ const NavBar = props => {
         </nav>
       </div>
    )
+  }else if(typeof window!="undefined"){
+    
+   const menu = ()  => {
+     //place menu here
+      console.log("yay")
+      setMenuBar(!menuBar)     
+   }  
+   
+   return(
+      <div>
+      <StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className="nav-logo" onClick={()=>menu()}></StaticImage>
+      {menuBar ?
+      <nav>
+         <Link to="/Articles" className="nav-link">Articles</Link>
+         <Link to="/About" className="nav-link">About</Link>
+         <Link to="/Pages" className="nav-link">Pages</Link>
+         <Link to="/Poetry" className="nav-link">Poetry</Link>
+        
+      </nav>
+      : ""
+      }
+    
+      </div>
+    )
   }else{
     return <div></div>
   }
