@@ -13,6 +13,12 @@ nav{
     grid-template-rows: repeat(4,1fr);
     width: 100%;
   }
+  div > .fill-click{
+    background-position: bottom;
+  }
+  .nav-logo{
+    display: inline-block;
+  }
 }
 
 a{
@@ -20,11 +26,14 @@ a{
 }
 
 
-
-.nav-logo{
-  left:20%;
+@media (min-width:800px){
+  .nav-logo{
+    left:20%;
+  }
+  .nav-logo:hover{
+    background-position:bottom;
+  }
 }
-
 .nav-link{
   font-family: "laila","Fira mono",Arial;
   font-size: 1.75rem;
@@ -33,22 +42,20 @@ a{
   background-size: 200% 100%;
   background-position:right;
   margin-left:10px;
-  transition:all 1s ease;
+  transition:all 0.5s ease;
 }
 
 .nav-link:hover{
-  background-position: left ;
+  background-position: left;
 }
+
 
 .nav-logo{
   background: linear-gradient(to top, pink 50%,  white 50%);
   background-size: 100% 200%;
   background-position:top;
   margin-left:10px;
-  transition:all 1s ease;
+  transition:all 0.5s ease;
   border-radius:50%;
 }
 
-.nav-logo:hover{
-  background-position:bottom;
-}

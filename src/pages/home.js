@@ -15,7 +15,7 @@ export default function home(){
 const NavBar = props => {
 
   const [menuBar,setMenuBar] = useState(false)
-
+  const [logoClicked,setLogoClicked] = useState(false)
 
   if(typeof window!="undefined" && window.innerWidth > 800){
 
@@ -35,12 +35,13 @@ const NavBar = props => {
    const menu = ()  => {
      //place menu here
       console.log("yay")
+      setLogoClicked(!logoClicked)
       setMenuBar(!menuBar)     
    }  
    
    return(
-      <div>
-      <StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className="nav-logo" onClick={()=>menu()}></StaticImage>
+      <div style={{textAlign:"center"}}>
+      <StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className={logoClicked ? "nav-logo fill-click" : "nav-logo"}  onClick={()=>menu()}></StaticImage>
       {menuBar ?
       <nav>
          <Link to="/Articles" className="nav-link">Articles</Link>
