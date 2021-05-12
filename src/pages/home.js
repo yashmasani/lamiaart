@@ -1,61 +1,54 @@
 import React from 'react'
-import {Link} from "gatsby"
-import "../styles/nav.scss"
-import {StaticImage} from "gatsby-plugin-image"
-import "@fontsource/fira-mono"
-import "@fontsource/laila"
-import {useState} from "react"
+import NavBar from "./nav"
+import {graphql} from "gatsby"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import "../styles/home.scss"
 
-export default function home(){
+
+export default function home({data}){
+  
+
+  const Card = props =>{
+    const image = getImage(props.data.file)
+    return (
+      
+     <div classame="card">
+        <div className="card-image">
+          <GatsbyImage image={image} alt="blog Picture" />
+        </div>
+        <p className="date"></p>
+        <h1>ok</h1>
+        <p></p>
+        <a href="#top"></a>
+     </div>
+    )
+    
+
+  }
   return (
-    <NavBar></NavBar>
+    <div>
+     <NavBar></NavBar>
+      <div className="cards">
+        <Card data={data}/>
+        <Card data={data}/>
+        <Card data={data}/>
+      </div>
+    </div>
   ) 
 }
 
-const NavBar = props => {
 
-  const [menuBar,setMenuBar] = useState(false)
-  const [logoClicked,setLogoClicked] = useState(false)
 
-  if(typeof window!="undefined" && window.innerWidth > 800){
+export const myQuery = graphql`
+ query myQuery{
+   file(
+     absolutePath: {eq: "/Users/yashmasani/project/mernNew/NotMyBlog/lamiaart/src/images/new.jpeg"}
+   ) {
+     childImageSharp {
+       gatsbyImageData(layout: CONSTRAINED)
+       id
+     }
+   }
+ }
+`
 
-   return (
-      <div style={{textAlign:"center"}}>
-        <nav>
-         <Link to="/Articles" className="nav-link">Articles</Link>
-         <Link to="/About" className="nav-link">About</Link>
-         <Link to="/home" ><StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className="nav-logo"></StaticImage></Link>
-         <Link to="/Pages" className="nav-link">Pages</Link>
-         <Link to="/Poetry" className="nav-link">Poetry</Link>
-        </nav>
-      </div>
-   )
-  }else if(typeof window!="undefined"){
-    
-   const menu = ()  => {
-     //place menu here
-      console.log("yay")
-      setLogoClicked(!logoClicked)
-      setMenuBar(!menuBar)     
-   }  
-   
-   return(
-      <div style={{textAlign:"center"}}>
-      <StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className={logoClicked ? "nav-logo fill-click" : "nav-logo"}  onClick={()=>menu()}></StaticImage>
-      {menuBar ?
-      <nav>
-         <Link to="/Articles" className="nav-link">Articles</Link>
-         <Link to="/About" className="nav-link">About</Link>
-         <Link to="/Pages" className="nav-link">Pages</Link>
-         <Link to="/Poetry" className="nav-link">Poetry</Link>
-        
-      </nav>
-      : ""
-      }
-    
-      </div>
-    )
-  }else{
-    return <div></div>
-  }
-}

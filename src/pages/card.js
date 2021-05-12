@@ -1,18 +1,24 @@
 import React from 'react'
+import {StaticImage} from "gatsby-plugin-image"
+import {Link,graphql} from "gatsby"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 
-export default function card(){
-  return (
-
-   <div classame="card">
-      <div className="image">
-        <img alt="Blog"/>
-        <p className="date"></p>
-      </div>
-      <h1></h1>
-      <p></p>
-      <a href="#top"></a>
-   </div>
-    
-  )
+export default function card({data}){
 }
+
+
+/**
+export const myQuery = graphql`
+ query myQuery{
+   file(
+     absolutePath: {eq: "/Users/yashmasani/project/mernNew/NotMyBlog/lamiaart/src/images/new.jpeg"}
+   ) {
+     childImageSharp {
+       gatsbyImageData(layout: CONSTRAINED)
+       id
+     }
+   }
+ }
+`
+***/
