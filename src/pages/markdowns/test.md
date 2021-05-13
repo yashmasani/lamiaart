@@ -1,3 +1,10 @@
-#New Test
+---
+title: "New Test"
+date: "2021-08-03"
+featuredImage: "../../images/new.jpeg"
+---
 
-![](../../images/logo.png)
+
+this is a nice test/n
+
+fdfsddfs

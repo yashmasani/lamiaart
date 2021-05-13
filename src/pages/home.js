@@ -3,22 +3,24 @@ import NavBar from "./nav"
 import {graphql} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import "../styles/home.scss"
+import "@fontsource/fira-mono"
+
 
 
 export default function home({data}){
   
 
   const Card = props =>{
-    const image = getImage(props.data.file)
+    const image = getImage(props.data.markdownRemark.frontmatter.featuredImage)
     return (
       
      <div classame="card">
         <div className="card-image">
           <GatsbyImage image={image} alt="blog Picture" />
         </div>
-        <p className="date"></p>
-        <h1>ok</h1>
-        <p></p>
+        <p className="date">{props.data.markdownRemark.frontmatter.date}</p>
+        <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+        <p className="excerpt-card" style={{fontFamily:"Fira Mono"}}>{props.data.markdownRemark.excerpt}</p>
         <a href="#top"></a>
      </div>
     )
@@ -26,7 +28,7 @@ export default function home({data}){
 
   }
   return (
-    <div>
+    <div style={{textAlign:"center"}}>
      <NavBar></NavBar>
       <div className="cards">
         <Card data={data}/>
@@ -39,6 +41,24 @@ export default function home({data}){
 
 
 
+export const pageQuery = graphql`
+query MyQuery {
+  markdownRemark {
+    frontmatter {
+      date
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+      title
+    }
+    excerpt
+  }
+}
+`
+
+/**
 export const myQuery = graphql`
  query myQuery{
    file(
@@ -51,4 +71,4 @@ export const myQuery = graphql`
    }
  }
 `
-
+**/

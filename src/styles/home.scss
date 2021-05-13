@@ -1,10 +1,38 @@
-.card-image{
- height:200px;
- width:150px;
+
+
+
+@media (max-width:800px){
+ .cards{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 0;
+  }
 }
 
+@media (min-width:800px){
 .cards{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto; 
+   justify-content: center;;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 2fr;
+   align-items: start;
+   column-gap: 10px;
+   margin: 10px;
+ }
+ .card-image{
+    width:80%;
+    padding: 20px;
+    text-align: center;
+ }
+}
+
+.card{
+  text-align: center;
+  justify-content: center;;
+}
+
+.excerpt-card{
+  font-family: "Fira mono",Arial;
 }
