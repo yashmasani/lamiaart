@@ -22,16 +22,20 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-color: white ;
-  border-radius: 50%; ;
+  border-radius: 50%;
+  background: linear-gradient(to top, #e8cece 50%,  white 50%);
+  transition: all 2s ease;
+  background-position: top;
+  background-size: 100% 200%;
 }
+
 
 .logo:hover{
   animation-play-state: paused;;
-  border: solid 2px black;
   cursor:pointer;
-}
-  
+  background-position: bottom;
+} 
+ 
 .lady{
   padding: 0;
   margin:0; 
@@ -54,6 +58,5 @@
   }
   .font-index{
     font-size: 4.4rem;
-  }
-    
+  }    
 }

@@ -9,19 +9,19 @@ import "@fontsource/fira-mono"
 
 export default function home({data}){
   
+  
 
   const Card = props =>{
-    const image = getImage(props.data.markdownRemark.frontmatter.featuredImage)
+    const image = getImage(props.node.frontmatter.featuredImage)
     return (
       
-     <div classame="card">
+     <div className="card" key={props.node.frontmatter.featuredImage.childImageSharp.id}>
         <div className="card-image">
           <GatsbyImage image={image} alt="blog Picture" />
         </div>
-        <p className="date">{props.data.markdownRemark.frontmatter.date}</p>
-        <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-        <p className="excerpt-card" style={{fontFamily:"Fira Mono"}}>{props.data.markdownRemark.excerpt}</p>
-        <a href="#top"></a>
+        <p className="date">{props.node.frontmatter.date}</p>
+        <h1>{props.node.frontmatter.title}</h1>
+        <p className="excerpt-card" style={{fontFamily:"Fira Mono"}}>{props.node.excerpt}</p>
      </div>
     )
     
@@ -31,9 +31,7 @@ export default function home({data}){
     <div style={{textAlign:"center"}}>
      <NavBar></NavBar>
       <div className="cards">
-        <Card data={data}/>
-        <Card data={data}/>
-        <Card data={data}/>
+      {data.allMarkdownRemark.nodes.map(node=> <Card node={node} />)}
       </div>
     </div>
   ) 
@@ -43,17 +41,20 @@ export default function home({data}){
 
 export const pageQuery = graphql`
 query MyQuery {
-  markdownRemark {
-    frontmatter {
-      date
-      featuredImage {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
+  allMarkdownRemark(limit: 3) {                                                                 
+    nodes {
+      frontmatter {
+        date
+        title
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED)
+            id
+          }
         }
       }
-      title
+      excerpt
     }
-    excerpt
   }
 }
 `

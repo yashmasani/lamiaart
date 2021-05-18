@@ -18,7 +18,7 @@ export default function NavBar(props){
         <nav>
          <Link to="/Articles" className="nav-link">Articles</Link>
          <Link to="/About" className="nav-link">About</Link>
-         <Link to="/home" ><StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className="nav-logo"></StaticImage></Link>
+         <Link to="/home" activeClassName="active"><StaticImage src="../images/smallerLogo.png" alt="Logo" layout="fixed" className="nav-logo"></StaticImage></Link>
          <Link to="/Pages" className="nav-link">Pages</Link>
          <Link to="/Poetry" className="nav-link">Poetry</Link>
         </nav>
