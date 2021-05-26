@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+}
+
+
+
 @media (max-width:800px){
  .cards{
     justify-content: center;
@@ -12,32 +18,75 @@
 .cards{
    justify-content: center;;
    display: grid;
-   grid-template-columns: 0.6fr 0.6fr 0.6fr;
-   grid-template-rows: 600px;
+   grid-template-columns: repeat(3, 0.3fr);
+   grid-template-rows: minmax(600px,auto);
    column-gap: 30px;
-   margin: 10px;
+   margin-top: 10px;
  }
  .card-image{
-    width:50%;
     padding: 20px;
-    text-align: center;
-    position:relative;
-    left: 20%;
+    cursor: pointer;
+    margin:0;
  }
  .card{
-    border:solid 0.5px black;
+    border:solid 0.1px black;
     height: 100%;
+    margin: 0;
  }
 }
 
 .card{
-  text-align: center;
+ text-align:left;
+  background: linear-gradient(to top, #be7474, 50%,  white 50%);
   justify-content: center;
- 
+  background-size: 100% 200%;
+  background-position: top;
+  transition: all 1s ease;
+  animation-name: curtains;
 }
 
+@keyframes curtains{
+  0% {opacity:0;}
+  100%{opacity:1;}
+}
+.card:hover{
+  background-position: bottom;
+  
+
+  & .excerpt-card{
+    color: white;
+  }
+}
+
+
+
 .excerpt-card{
-  font-family: "Fira mono",Arial;
+  font-family: "Poiret One",Arial;
   word-spacing: 10px;
   line-height:150%;
+  color : black;
+  margin-left: 10px;
+
+}
+
+.whole-img{
+  cursor: pointer;
+  width:50%;
+  display: block;
+}
+
+.date{
+  float: right;
+  margin-right: 20px;
+  font-style: italic;
+ }
+
+ .back{
+  float: left; 
+  margin: 30px;
+  border-radius:50%;
+ }
+
+.back:hover{
+  background-color: #e8cece;
 }

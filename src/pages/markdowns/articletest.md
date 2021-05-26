@@ -1,7 +1,7 @@
 ---
 title: "Poetry Slam"
 date: "2021-01-03"
-featuredImage: "../../images/new.jpeg"
+featuredImage: "../../images/lamiaImg.jpeg"
 ---
 
 My biggest fear is not that I won’t be enough

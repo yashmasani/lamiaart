@@ -2,7 +2,7 @@ import * as React from "react"
 import {StaticImage} from "gatsby-plugin-image"
 import "../styles/index.scss"
 import {Link} from "gatsby"
-import "@fontsource/playfair-display-sc";
+import "@fontsource/playfair-display";
 // markup
 export default function IndexPage(){
   return(
