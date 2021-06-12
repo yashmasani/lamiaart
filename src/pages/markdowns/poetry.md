@@ -1,21 +1,6 @@
 ---
-title: "Poetry Slam"
+title: "The Oldest"
 date: "2021-01-03"
 featuredImage: "../../images/instapoem.jpeg"
 ---
-
-My biggest fear is not that I won’t be enough
-
-It’s that I’ll be reduced to a mere
-
-Anecdote
-
-Simply
-
-A myth
-
-Once I leave you
-
-I’ll become just
-
-The girl who wrote this
+I don’t know how to be the oldest daughter, there I said it. I’ve been feeling this way for over a year.... 
