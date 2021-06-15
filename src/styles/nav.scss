@@ -5,6 +5,7 @@ nav{
   margin-top: 20px; 
   align-items: center;
   justify-content: center; ;
+  background-color: #debaba;
 }
 
 @media (max-width: 800px){
@@ -29,29 +30,30 @@ a{
 @media (min-width:800px){
   .nav-logo{
     left:20%;
+    transition: transform 0.2s;
+    background-color: white;
   }
   .nav-logo:hover{
     background-position:bottom;
+    transform: scale(1.25);
   }
 }
 .nav-link{
   font-family: "laila","Fira mono",Arial;
   font-size: 1.75rem;
   color:black; 
-  background: linear-gradient(to right, #e8cece 50%,  white 50%);
-  background-size: 220% 100%;
-  background-position:right;
   margin-left:10px;
   transition:all 0.5s ease;
 }
 
 .nav-link:hover{
-  background-position: left;
+  color: white;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
 }
 
 
 .nav-logo{
-  background: linear-gradient(to top, #e8cece 50%,  white 50%);
+  background: linear-gradient(to top, #E7DADB 50%,  white 50%);
   background-size: 100% 200%;
   background-position:top;
   margin-left:10px;

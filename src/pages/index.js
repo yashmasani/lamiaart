@@ -3,7 +3,6 @@ import {StaticImage} from "gatsby-plugin-image"
 import "../styles/index.scss"
 import {Link} from "gatsby"
 import "@fontsource/playfair-display";
-// markup
 export default function IndexPage(){
   return(
     <div className="index">
